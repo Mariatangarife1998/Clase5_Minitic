@@ -1,13 +1,13 @@
 package co.edu.utp.misiontic2022.c2.cmaria.ajedrez;
 
-public abstract class Ficha {
+public abstract class Ficha implements Dibujable, ElementoMovil {
     private String color;
 
-    public Boolean comer(){
+    public Boolean captura(){
         return null;
     }
 
-    public Boolean mover(){
-        return null;
-    }
+    // public abstract Boolean mover();
+
+
 }
