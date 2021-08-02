@@ -13,6 +13,25 @@ public class Tablero implements Dibujable {
         
     }
 
+    private Casilla[] casillas;
+
+    public Tablero(){
+        casillas = new Casilla[64];
+        // System.out.println(casillas);
+        for (int i = 0; i < casillas.length; i++) {
+            int fila =i/8 ;
+            int columna =i%8 ;
+            casillas[i] = new Casilla(fila, columna);
+            System.out.println(i + ": " + casillas[i]);
+
+        }
+    }
+
+    public void ubicarFicha(Integer fila, Integer columna, Ficha ficha ){
+        // int indice = 8 * fila + columna;
+        casillas[8 * fila + columna].ubicarFicha(ficha);
+    }
+
     public Boolean enrroque(){
         return null;
     }

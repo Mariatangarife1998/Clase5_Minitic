@@ -1,6 +1,10 @@
 package co.edu.utp.misiontic2022.c2.cmaria.ajedrez;
 
 public class Peon extends Ficha {
+    public Peon(Color color) {
+        super(color);
+    }
+
     public Boolean comer(){
         return null;
     }

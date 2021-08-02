@@ -1,12 +1,34 @@
 package co.edu.utp.misiontic2022.c2.cmaria.ajedrez;
 
 public class Casilla implements Dibujable{
-    private String color;
-    private Integer fila;
-    private Integer columna;
+    private final Color color;
+    private final Integer fila;
+    private final Integer columna;
+
+    private Ficha ficha;
+
+    public Casilla(Integer fila, Integer columna) {
+        this.fila = fila;
+        this.columna = columna;
+        this.color = (fila + columna) % 2 == 0 ? Color.BLANCO : Color.NEGRO;
+    }
 
     public Boolean ocupada(){
-        return null;
+        // boolean hayFicha = ficha != null;
+        // return hayFicha;
+        return ficha != null;
+    }
+
+    public void ubicarFicha(Ficha ficha){
+        this.ficha = ficha;
+        this.ficha.setCasilla(this);
+    }
+
+    public Ficha obtenerFicha(){
+        return ficha;
+    }
+    public void retirarFicha (){
+        this.ficha = null;
     }
 
     @Override
@@ -19,5 +41,11 @@ public class Casilla implements Dibujable{
     public void posicionar(Integer x, Integer y) {
         // TODO Auto-generated method stub
         
+    }
+
+    
+    @Override
+    public String toString() {
+        return "Casilla [color=" + color + ", fila=" + fila + ", columna=" + columna + "]";
     }
 }
